@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../IF_class_discussion.srcs/sources_1/new/IDecode.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/imports/IF stage files/adder.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/imports/IF stage files/flopr.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/new/id_ex.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/imports/IF stage files/if_id.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/imports/IF stage files/ifetch.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/imports/IF stage files/imem.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/imports/IF stage files/mux.sv" \
+"../../../../IF_class_discussion.srcs/sources_1/imports/IF stage files/pipeline.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

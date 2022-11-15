@@ -1,0 +1,14 @@
+0.7
+2020.2
+Apr 18 2022
+16:05:34
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.sim/sim_1/behav/xsim/glbl.v,1668499726,verilog,,,,glbl,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/adder.sv,1668499728,systemVerilog,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/flopr.sv,,adder,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/flopr.sv,1668499728,systemVerilog,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/new/id_ex.sv,,flopr,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/if_id.sv,1668499728,systemVerilog,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/ifetch.sv,,if_id,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/ifetch.sv,1668505988,systemVerilog,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/imem.sv,,ifetch,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/imem.sv,1668499728,systemVerilog,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/mux.sv,,imem,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/mux.sv,1668499728,systemVerilog,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/pipeline.sv,,mux2;mux3,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/pipeline.sv,1668506159,systemVerilog,,,,pipeline,,uvm,,,,,,
+C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/new/IDecode.sv,1668508061,systemVerilog,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/adder.sv,,IDecode,,uvm,,,,,,
+,,,,C:/Users/Robles/Downloads/IF_class_discussion-2/IF_class_discussion/IF_class_discussion.srcs/sources_1/imports/IF stage files/if_id.sv,,id_ex,,,,,,,,

@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Nov  9 15:07:16 2022
+# Process ID: 18636
+# Current directory: C:/Users/006497838/Desktop/pipelined Processor/Pipeline/IF_class_discussion
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12096 C:\Users\006497838\Desktop\pipelined Processor\Pipeline\IF_class_discussion\IF_class_discussion.xpr
+# Log file: C:/Users/006497838/Desktop/pipelined Processor/Pipeline/IF_class_discussion/vivado.log
+# Journal file: C:/Users/006497838/Desktop/pipelined Processor/Pipeline/IF_class_discussion\vivado.jou
+# Running On: CNS-JB311-67839, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 33973 MB
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/006497838/Desktop/pipelined Processor/Pipeline/IF_class_discussion/IF_class_discussion.xpr}
+update_compile_order -fileset sources_1

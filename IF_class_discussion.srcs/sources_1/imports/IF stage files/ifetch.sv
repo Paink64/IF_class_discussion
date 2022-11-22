@@ -1,6 +1,6 @@
 //IF stage 
 module ifetch (
-   input  logic             clk, reset,
+   input  logic         clk, reset,
    input  logic         PCSrcE,
    input  logic  [31:0] PCTargetE,
    output logic  [31:0] InstrD,

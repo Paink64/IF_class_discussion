@@ -1,11 +1,10 @@
 `timescale 1ns / 1ps
 
 module WBStg(
-    input  logic         clk, reset,
-    input  logic         PCSrcE,
-    input  logic  [31:0] PCTargetE,
+    input logic     [31:0]  ALUResultW, ReadDataW, PCPlus4W,
+    input logic     [1:0]   ResultSrcW,
     
-    output logic  [31:0] ALUResultW, ReadDataW,
-    output logic  [31:0] PCPlus4D   
+    output logic    [31:0]  ResultW
     );
+    mux3 mux31(ALUResultW, ReadDataW, PCPlus4W, ResultSrcW, ResultW);
 endmodule

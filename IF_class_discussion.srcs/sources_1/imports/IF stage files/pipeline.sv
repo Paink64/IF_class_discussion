@@ -32,6 +32,8 @@ module pipeline ();
   ifetch ifetch1(clk, reset,tb_PCSrcE,tb_PCTargetE,tb_InstrD,tb_PCD,tb_PCPlus4D); 
   IDecode IDecode1(clk, reset,tb_PCD,tb_InstrD,tb_PCPlus4D);
   Execute Execute1();
+  MemStg MemStg1();
+  WBStg WBStg1();
    initial begin      
     tb_PCSrcE <= 0;    
     tb_PCTargetE <= 0;      

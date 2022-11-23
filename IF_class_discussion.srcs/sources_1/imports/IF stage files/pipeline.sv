@@ -23,26 +23,26 @@ module pipeline ();
   logic [31:0]    PCTargetE;
   
   //~~~
-  logic           RegWriteW,
-  logic   [31:0]  ResultW, RdW,
-  logic   [31:0]  PCE,PCPlus4E,
-  logic   [4:0]   RD1E, RD2E, RDE,
-  logic   [24:0]  IMMEXIE,
-  logic           RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,
-  logic   [1:0]   ResultSrcE,
-  logic   [2:0]   AluControlE
+  logic           RegWriteW;
+  logic   [31:0]  ResultW, RdW;
+  logic   [31:0]  PCE,PCPlus4E;
+  logic   [4:0]   RD1E, RD2E, RDE;
+  logic   [24:0]  IMMEXIE;
+  logic           RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE;
+  logic   [1:0]   ResultSrcE;
+  logic   [2:0]   AluControlE;
 
   //~~~~
 
-  logic   [31:0]  ALUResultM, WriteDataM, PCPlus4M,
-  logic   [4:0]   RDM,
-  logic           RegWriteM, MemWriteM,
-  logic   [1:0]   ResultSrcM
+  logic   [31:0]  ALUResultM, WriteDataM, PCPlus4M;
+  logic   [4:0]   RDM;
+  logic           RegWriteM, MemWriteM;
+  logic   [1:0]   ResultSrcM;
 
     //~~~
 
-  logic   [31:0]  ALUResultW, ReadDataW, PCPlus4W,
-  logic   [1:0]   ResultSrcW
+  logic   [31:0]  ALUResultW, ReadDataW, PCPlus4W;
+  logic   [1:0]   ResultSrcW;
   
   
   ifetch ifetch1(     clk, reset,
@@ -55,7 +55,7 @@ module pipeline ();
   IDecode IDecode1(   clk, reset,
                       PCD,
                       InstrD,
-                      PCPlus4D
+                      PCPlus4D,
                       RegWriteW,
                       ResultW, RdW,
                    
@@ -92,7 +92,7 @@ module pipeline ();
                       RegWriteW,
                       ResultSrcW);
   
-  WBStg WBStg1(       clk, reset,
+  WBStg WBStg1(
                       ALUResultW, ReadDataW, PCPlus4W,
                       ResultSrcW,
 

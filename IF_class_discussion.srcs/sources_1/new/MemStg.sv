@@ -12,5 +12,6 @@ module MemStg(
    output logic             RegWriteW,
    output logic     [1:0]   ResultSrcW
     );
+    dmem dmem1(clk, MemWriteM, ALUResultM, WriteDataM, ReadDataW);
     Mem_WB  Mem_WB1();
 endmodule

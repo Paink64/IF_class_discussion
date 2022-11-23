@@ -13,8 +13,17 @@ module IDecode (
    output logic     [1:0]   ResultSrcE,
    output logic     [2:0]   AluControlE
    );
-
-   id_ex  id_ex1();
+    logic Zero, PCSrc;
+    logic [2:0] ImmSrcD;
+    controller c(InstrD[6:0], InstrD[14:12], InstrD[30], Zero,
+               ResultSrcE, MemWriteE, PCSrc,
+               AluSrcE, RegWriteE, JumpE,
+               ImmSrcD, AluControlE);
+               
+    extend  extend1(InstrD[31:7],ImmSrcD,IMMEXIE);
+    regfile  regfile1(clk, RegWriteE, InstrD[19:15], InstrD[24:20], 
+                 InstrD[11:7], ResultW, RD1E, RD2E);
+    id_ex   id_ex1();
 
   
 endmodule

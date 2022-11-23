@@ -19,7 +19,7 @@ module Execute(
     
     mux2 #(32)  pcmux(RD2E, IMMEXIE, AluSrcE, SrcBE);
     adder       PCadder(PCE, IMMEXIE, PCTargetE);
-    
+    alu alu1(RD1E, SrcBE, ALUControl, ALUResultM, Zero);
     
     
     

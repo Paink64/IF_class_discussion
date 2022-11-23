@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 module Mem_WB(
    input logic              clk, reset,
-   input logic      [31:0]  ALUResultM, WriteDataM, PCPlus4M,
+   input logic      [31:0]  ALUResultM, ReadDataM, PCPlus4M,
    input logic      [4:0]   RDM,
-   input logic              RegWriteM, MemWriteM,
+   input logic              RegWriteM,
    input logic      [1:0]   ResultSrcM,
    
    output logic     [31:0]  ALUResultW, ReadDataW, PCPlus4W,
@@ -22,12 +22,12 @@ module Mem_WB(
 		ResultSrcW <=0;
 	end
 	else begin
-		ALUResultW <= 0;
-		ReadDataW <=0;
-		RDW <=0;
-		PCPlus4W <= 0;
-		RegWriteW <=0;
-		ResultSrcW <=0;
+		ALUResultW <= ALUResultM;
+		ReadDataW <=ReadDataM;
+		RDW <=RDM;
+		PCPlus4W <= PCPlus4M;
+		RegWriteW <=RegWriteM;
+		ResultSrcW <=ResultSrcM;
 	end
    
 endmodule

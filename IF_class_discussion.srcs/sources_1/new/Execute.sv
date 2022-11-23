@@ -24,5 +24,16 @@ module Execute(
     
     
     
-    Ex_Mem  Ex_Mem1();
+    Ex_Mem  Ex_Mem1(clk, reset,
+PCTargetE,
+ALUResultE, WriteDataE, PCPlus4E,
+RDE,
+RegWriteE, MemWriteE,
+ResultSrcE,
+   
+PCTargetM,
+ALUResultM, WriteDataM, PCPlus4M,
+RDM,
+RegWriteM, MemWriteM,
+ResultSrcM);
 endmodule

@@ -23,7 +23,21 @@ module IDecode (
     extend  extend1(InstrD[31:7],ImmSrcD,IMMEXIE);
     regfile  regfile1(clk, RegWriteE, InstrD[19:15], InstrD[24:20], 
                  InstrD[11:7], ResultW, RD1E, RD2E);
-    id_ex   id_ex1();
+                 
+    id_ex   id_ex1(clk, reset,
+PCD,PCPlus4D,
+RD1D, RD2D, RDD,
+IMMEXID,
+RegWriteD, MemWriteD, JumpD, BranchD, AluSrcD,
+ResultSrcD,
+AluControlD,
+   
+PCE,PCPlus4E,
+RD1E, RD2E, RDE,
+IMMEXIE,
+RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,
+ResultSrcE,
+AluControlE);
 
   
 endmodule

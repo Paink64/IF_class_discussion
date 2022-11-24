@@ -1,6 +1,6 @@
 //IF stage 
 module ifetch (
-   input  logic             clk, reset,
+   input  logic         clk, reset,
    input  logic         PCSrcE,
    input  logic  [31:0] PCTargetE,
    output logic  [31:0] InstrD,
@@ -24,12 +24,12 @@ module ifetch (
   // Ifetch pipeline register
    if_id  if_id1  (clk, reset,InstrF, PCF,PCPlus4F,InstrD,PCD,PCPlus4D);
 
-  
    initial begin
    
    $display("Time\t PCF\t PCD\t InstrF\t\t InstrD\t\t PCPlus4D");
    $monitor("%0d\t\t %0d\t\t %0d\t\t %h\t %h\t %h", $time, PCF, PCD, InstrF,InstrD,PCPlus4D);
 #210 $finish;
    end
+
 
 endmodule // ifetch

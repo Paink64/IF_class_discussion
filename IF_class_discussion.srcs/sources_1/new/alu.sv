@@ -1,7 +1,7 @@
 module alu(input  logic [31:0] a, b,
            input  logic [2:0]  alucontrol,
            output logic [31:0] result,
-           output logic        zero);
+           output logic        ZeroE);
 
   logic [31:0] condinvb, sum;
   logic        v;              // overflow
@@ -22,7 +22,7 @@ module alu(input  logic [31:0] a, b,
      default: result=32'bx;
     endcase
     
-  assign zero = (result == 0) ? 1 : 0;
+  assign ZeroE = 1;
   assign v = ~(alucontrol[0] ^ a[31] ^ b[31]) & (a[31] ^ sum[31]) & isAddSub;
   
 endmodule

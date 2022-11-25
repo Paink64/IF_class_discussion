@@ -50,14 +50,21 @@ module id_ex(
 		AluControlE <=AluControlD;
 		AluSrcE <=AluSrcD;
 	end
+	
+//	initial begin
+ //  $display("Time\t clk\t reset\t RegWriteE\t  AluSrcE\t MemWriteE\t ResultSrcE\t BranchE\t AluControlE\t JumpE\t RD1E\t RD2E\t RDE");
+ //  $monitor("%0d\t\t%b\t\t%b\t\t %b\t\t   %b\t\t\t  %b\t\t  %b\t\t\t %b\t\t\t  %b\t\t\t  %b\t\t\t  %0d\t\t  %0d\t\t  %0d\t\t", 
+ //           $time,clk, reset,RegWriteE, AluSrcE, MemWriteE,ResultSrcE, BranchE, AluControlE,  JumpE, RD1E,  RD2E ,RDE);
+ //  #260 $finish;
+ //  end
    
-                     initial begin
+   //                  initial begin
    //$display("Time\t PCD\tPCPlus4D\t RD1D\t RD2D\t\t RDD\t\t IMMEXID\t\t RegWriteD\t\t MemWriteD\t\t JumpD\t\t BranchD\t\t AluSrcD\t\tResultSrcD\t\tAluControlD");
    //$monitor("%0d\t\t  %0d\t\t   %0d\t\t %0d\t\t %0d\t\t\t %0d\t\t\t  %0d\t\t\t\t  %b\t\t\t  %b\t\t\t %b\t\t\t %b\t\t  %b\t\t  %b\t\t  %b\t\t", $time,
      //        PCD,PCPlus4D, RD1D, RD2D, RDD,IMMEXID,RegWriteD, MemWriteD, JumpD, BranchD, AluSrcD, ResultSrcD,AluControlD);
    //$monitor("%0d\t\t  %0d\t\t   %0d\t\t %0d\t\t %0d\t\t\t %0d\t\t\t  %0d\t\t\t\t  %b\t\t\t  %b\t\t\t %b\t\t\t %b\t\t  %b\t\t  %b\t\t  %b\t\t", $time,
      //              PCE,PCPlus4E, RD1E, RD2E, RDE,IMMEXIE,RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,ResultSrcE, AluControlE);
    //#260 $finish;
-  end
+  //end
    
 endmodule

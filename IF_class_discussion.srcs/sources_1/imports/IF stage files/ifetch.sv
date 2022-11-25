@@ -26,10 +26,10 @@ module ifetch (
 
 //   initial begin
    
-//   $display("Time\t PCF\t PCD\t InstrF\t\t InstrD\t\t PCPlus4D");
- //  $monitor("%0d\t\t %0d\t\t %0d\t\t %h\t %h\t %h", $time, PCF, PCD, InstrF,InstrD,PCPlus4D);
- //  #250 $finish;
- //  end
+//   $display("Time\t clk\t reset\t PCF\t PCD\t InstrF\t\t InstrD\t\t PCPlus4D");
+//   $monitor("%0d\t\t %b\t\t %b\t\t %0d\t\t %0d\t\t %h\t %h\t %h", $time, clk, reset, PCF, PCD, InstrF,InstrD,PCPlus4D);
+//   #250 $finish;
+//   end
 
 
 endmodule // ifetch

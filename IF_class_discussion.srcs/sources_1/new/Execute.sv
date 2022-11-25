@@ -35,6 +35,14 @@ module Execute(
             ResultSrcM);
     
     assign PCSrcE = 0;
+    
+//  initial begin
+//   $display("Time\t  RegWriteE\t  AluSrcE\t MemWriteE\t ResultSrcE\t BranchE\t AluControlE\t JumpE\t RD1E\t RD2E\t RDE");
+//   $monitor("%0d\t\t %b\t\t   %b\t\t\t  %b\t\t  %b\t\t\t %b\t\t\t  %b\t\t\t  %b\t\t\t  %0d\t\t  %0d\t\t  %0d\t\t", 
+//            $time,RegWriteE, AluSrcE, MemWriteE,ResultSrcE, BranchE, AluControlE,  JumpE, RD1E,  RD2E ,RDE);
+//   #260 $finish;
+//   end
+    
     //assign PCSrcE = (ZeroE & BranchE) | JumpE;
 
   // initial begin

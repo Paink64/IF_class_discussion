@@ -14,4 +14,11 @@ module controller(input  logic [6:0] op,
              AluSrcD, RegWriteD, JumpD, ImmSrcD, ALUOp);
   aludec  ad(op[5], funct3, funct7b5, ALUOp, AluControlD);
 
+//   initial begin
+//   $display("Time\t op\t\t\t funct3\t\t funct7b5\t RegWriteE\t ImmSrcD\t AluSrcE\t MemWriteD\t ResultSrcE\t BranchE\t AluControlE\t JumpE\t ALUOp");
+//   $monitor("%0d\t\t %b\t\t %b\t\t %b\t\t\t %b\t\t\t %b\t\t\t %b\t\t\t  %b\t\t\t  %b\t\t  %b\t\t  %b\t\t\t %b\t\t  %b", 
+//            $time,op,funct3,funct7b5,RegWriteD,ImmSrcD, AluSrcD, MemWriteD,ResultSrcD, BranchD, AluControlD,  JumpD, ALUOp);
+//   #260 $finish;
+//   end
+
 endmodule

@@ -24,4 +24,12 @@ ALUResultW, ReadDataW, PCPlus4W,
 RDW,
 RegWriteW,
 ResultSrcW);
+
+  // initial begin
+   //  $display("Time\t ALUResultM\t WriteDataM\t\t PCPlus4M\t RDM\t RegWriteM\t  MemWriteM\t ResultSrcM\t ALUResultW\t ReadDataW\t PCPlus4W\t RDW\t RegWriteW\t ResultSrcW\t");
+   //  $monitor("%0d\t\t %0d\t\t %h\t\t   %0d\t\t\t %0d\t\t\t %0d\t\t %0d\t\t  %b\t\t  %b\t\t\t  %b\t\t\t %b\t\t\t  %d\t\t\t  %0d\t\t\t  %0d\t\t  %0d\t\t  %0d\t\t  %0d\t\t  %0d\t\t %0d\t\t", $time,
+   //ALUResultM, WriteDataM, PCPlus4M,RDM,RegWriteM, MemWriteM,ResultSrcM,ALUResultW, ReadDataW, PCPlus4W,RDW,RegWriteW,ResultSrcW);
+   //   #260 $finish;
+   //end
+
 endmodule

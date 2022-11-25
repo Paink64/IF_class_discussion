@@ -3,15 +3,17 @@
 module id_ex(
    input logic              clk, reset,
    input logic     [31:0]  PCD,PCPlus4D,
-   input logic     [4:0]   RD1D, RD2D, RDD,
-   input logic     [24:0]  IMMEXID,
+   input logic     [31:0]   RD1D, RD2D, 
+   input logic     [4:0] RDD,
+   input logic     [31:0]  IMMEXID,
    input logic             RegWriteD, MemWriteD, JumpD, BranchD, AluSrcD,
    input logic     [1:0]   ResultSrcD,
    input logic     [2:0]   AluControlD,
    
    output logic     [31:0]  PCE,PCPlus4E,
-   output logic     [4:0]   RD1E, RD2E, RDE,
-   output logic     [24:0]  IMMEXIE,
+   output logic     [31:0]   RD1E, RD2E,
+   output logic     [4:0]   RDE,
+   output logic     [31:0]  IMMEXIE,
    output logic             RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,
    output logic     [1:0]   ResultSrcE,
    output logic     [2:0]   AluControlE
@@ -48,5 +50,14 @@ module id_ex(
 		AluControlE <=AluControlD;
 		AluSrcE <=AluSrcD;
 	end
+   
+                     initial begin
+   //$display("Time\t PCD\tPCPlus4D\t RD1D\t RD2D\t\t RDD\t\t IMMEXID\t\t RegWriteD\t\t MemWriteD\t\t JumpD\t\t BranchD\t\t AluSrcD\t\tResultSrcD\t\tAluControlD");
+   //$monitor("%0d\t\t  %0d\t\t   %0d\t\t %0d\t\t %0d\t\t\t %0d\t\t\t  %0d\t\t\t\t  %b\t\t\t  %b\t\t\t %b\t\t\t %b\t\t  %b\t\t  %b\t\t  %b\t\t", $time,
+     //        PCD,PCPlus4D, RD1D, RD2D, RDD,IMMEXID,RegWriteD, MemWriteD, JumpD, BranchD, AluSrcD, ResultSrcD,AluControlD);
+   //$monitor("%0d\t\t  %0d\t\t   %0d\t\t %0d\t\t %0d\t\t\t %0d\t\t\t  %0d\t\t\t\t  %b\t\t\t  %b\t\t\t %b\t\t\t %b\t\t  %b\t\t  %b\t\t  %b\t\t", $time,
+     //              PCE,PCPlus4E, RD1E, RD2E, RDE,IMMEXIE,RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,ResultSrcE, AluControlE);
+   //#260 $finish;
+  end
    
 endmodule

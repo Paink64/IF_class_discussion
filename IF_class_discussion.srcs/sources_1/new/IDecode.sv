@@ -8,21 +8,22 @@ module IDecode (
    input logic      [31:0]  ResultW, RdW,
    
    output logic     [31:0]  PCE,PCPlus4E,
-   output logic     [4:0]   RD1E, RD2E, RDE,
-   output logic     [24:0]  IMMEXIE,
+   output logic     [31:0]  RD1E, RD2E, 
+   output logic     [4:0]RDE,
+   output logic     [31:0]  IMMEXIE,
    output logic             RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,
    output logic     [1:0]   ResultSrcE,
-   output logic     [2:0]   AluControlE,
-   output logic [1:0] ImmSrcD
+   output logic     [2:0]   AluControlE
    );
-    //logic [1:0] ImmSrcD;
+    logic [1:0] ImmSrcD;
     
-    logic     [4:0]   RD1D, RD2D, RDD;
-    logic     [24:0]  IMMEXID;
+    logic     [31:0]   RD1D, RD2D;
+    logic     [4:0] RDD;
+    logic     [31:0]  IMMEXID;
     logic             RegWriteD, MemWriteD, JumpD, BranchD, AluSrcD;
     logic     [1:0]   ResultSrcD;
     logic     [2:0]   AluControlD;
-    
+    assign RDD = InstrD[11:7];
     
     controller c(InstrD[6:0], InstrD[14:12], InstrD[30],
                ResultSrcD, MemWriteD,
@@ -31,8 +32,7 @@ module IDecode (
                
     extend  extend1(InstrD[31:7],ImmSrcD,IMMEXID);
     regfile  regfile1(clk, RegWriteW, InstrD[19:15], InstrD[24:20], 
-                 RdW, ResultW, RD1E, RD2E);
-                 
+                 RDD, ResultW, RD1D, RD2D);
     id_ex   id_ex1( clk, reset,
                     PCD,PCPlus4D,
                     RD1D, RD2D, RDD,
@@ -47,6 +47,15 @@ module IDecode (
                     RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,
                     ResultSrcE,
                     AluControlE);
-
+                   
+                   
+                            
+  initial begin
+   $display("Time\t PCD\t InstrD\t\t InstrD19_15\t InstrD24_20\t InstrD11_7\t RegWriteE\t ImmSrcD\t AluSrcE\t MemWriteD\t ResultSrcE\t BranchE\t AluControlE\t JumpE\t RD1E\t RD2E\t RDE");
+   $monitor("%0d\t\t %0d\t\t %h\t\t %0d\t\t\t\t %0d\t\t\t\t %0d\t\t\t %b\t\t  %b\t\t  %b\t\t\t  %b\t\t  %b\t\t\t %b\t\t\t  %b\t\t\t  %b\t\t\t  %0d\t\t  %0d\t\t  %0d\t\t", 
+            $time,    PCD,  InstrD,InstrD[19:15], InstrD[24:20], InstrD[11:7],RegWriteE,ImmSrcD, AluSrcE, MemWriteD,ResultSrcE, BranchE, AluControlE,  JumpE, RD1E,  RD2E ,RDE);
+   #260 $finish;
+   end
+  
   
 endmodule

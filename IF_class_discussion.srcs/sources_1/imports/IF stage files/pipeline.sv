@@ -26,8 +26,9 @@ module pipeline ();
   logic           RegWriteW;
   logic   [31:0]  ResultW, RdW;
   logic   [31:0]  PCE,PCPlus4E;
-  logic   [4:0]   RD1E, RD2E, RDE;
-  logic   [24:0]  IMMEXIE;
+  logic   [31:0]   RD1E, RD2E;
+  logic   [4:0] RDE;
+  logic   [31:0]  IMMEXIE;
   logic           RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE;
   logic   [1:0]   ResultSrcE;
   logic   [2:0]   AluControlE;
@@ -43,9 +44,6 @@ module pipeline ();
 
   logic   [31:0]  ALUResultW, ReadDataW, PCPlus4W;
   logic   [1:0]   ResultSrcW;
-  
-  logic [1:0] ImmSrcD;
-  logic ZeroE;
   
   ifetch ifetch1(     clk, reset,
                       PCSrcE,
@@ -66,8 +64,7 @@ module pipeline ();
                       IMMEXIE,
                       RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE,
                       ResultSrcE,
-                      AluControlE,
-                      ImmSrcD);
+                      AluControlE);
   
   Execute Execute1(   clk, reset,
                       RD1E, RD2E, RDE,
@@ -82,8 +79,7 @@ module pipeline ();
                       ALUResultM, WriteDataM, PCPlus4M,
                       RDM,
                       RegWriteM, MemWriteM, PCSrcE,
-                      ResultSrcM,
-                      ZeroE);
+                      ResultSrcM);
   
   MemStg MemStg1(     clk, reset,
                       ALUResultM, WriteDataM, PCPlus4M,

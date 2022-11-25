@@ -7,4 +7,12 @@ module WBStg(
     output logic    [31:0]  ResultW
     );
     mux3 mux31(ALUResultW, ReadDataW, PCPlus4W, ResultSrcW, ResultW);
+
+  // initial begin
+   //  $display("Time\t ALUResultW\t ReadDataW\t\t PCPlus4W\t ResultSrcW\t ResultW\t");
+   //  $monitor("%0d\t\t %0d\t\t %h\t\t   %0d\t\t\t %0d\t\t\t %0d\t\t %0d\t\t  %b\t\t  %b\t\t\t  %b\t\t\t %b\t\t\t  %d\t\t\t  %0d\t\t\t  %0d\t\t  %0d\t\t  %0d\t\t  %0d\t\t  %0d\t\t %0d\t\t", $time,
+   //     ALUResultW, ReadDataW, PCPlus4W,ResultSrcW,ResultW);
+   //   #260 $finish;
+   //end
+
 endmodule

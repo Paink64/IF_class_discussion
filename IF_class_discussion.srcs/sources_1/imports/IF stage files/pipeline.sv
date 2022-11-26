@@ -24,10 +24,10 @@ module pipeline ();
   
   //~~~
   logic           RegWriteW;
-  logic   [31:0]  ResultW, RdW;
+  logic   [31:0]  ResultW;
   logic   [31:0]  PCE,PCPlus4E;
   logic   [31:0]   RD1E, RD2E;
-  logic   [4:0] RDE;
+  logic   [4:0] RDE, RDW;
   logic   [31:0]  IMMEXIE;
   logic           RegWriteE, MemWriteE, JumpE, BranchE, AluSrcE;
   logic   [1:0]   ResultSrcE;
@@ -57,7 +57,7 @@ module pipeline ();
                       InstrD,
                       PCPlus4D,
                       RegWriteW,
-                      ResultW, RdW,
+                      ResultW, RDW,
                    
                       PCE,PCPlus4E,
                       RD1E, RD2E, RDE,
@@ -97,10 +97,43 @@ module pipeline ();
                       ResultSrcW,
 
                       ResultW);
-  
+                      
    initial begin      
-    PCSrcE <= 0;    
-    PCTargetE <= 0;      
+    InstrD <= 0;    
+    PCD <= 0;
+    PCPlus4D <= 0;    
+    PCSrcE <= 0;
+    PCTargetE <= 0;  
+      
+    RegWriteW <= 0;
+    ResultW <= 0;    
+    PCE <= 0;
+    PCPlus4E <= 0;    
+    RD1E <= 0;
+    RD2E <= 0;    
+    RDE <= 0;
+    RDW <= 0;    
+    IMMEXIE <= 0;
+    RegWriteE <= 0;    
+    MemWriteE <= 0;
+    JumpE <= 0;    
+    BranchE <= 0;
+    AluSrcE <= 0;    
+    ResultSrcE <= 0;
+    AluControlE <= 0;
+    
+    ALUResultM <= 0;
+    WriteDataM <= 0;    
+    PCPlus4M <= 0;
+    RDM <= 0;    
+    RegWriteM <= 0;
+    MemWriteM <= 0;    
+    ResultSrcM <= 0;
+    
+    ALUResultW <= 0;    
+    ReadDataW <= 0;
+    PCPlus4W <= 0;
+    ResultSrcW <= 0;
    end                    
 
 

@@ -1,13 +1,11 @@
 `timescale 1ns / 1ps
 module Ex_Mem(
    input logic              clk, reset,
-   input logic     [31:0]  PCTargetE,
    input logic     [31:0]  ALUResultE, WriteDataE, PCPlus4E,
    input logic     [4:0]   RDE,
    input logic             RegWriteE, MemWriteE,
    input logic     [1:0]   ResultSrcE,
    
-   output logic     [31:0]  PCTargetM,
    output logic     [31:0]  ALUResultM, WriteDataM, PCPlus4M,
    output logic     [4:0]   RDM,
    output logic             RegWriteM, MemWriteM,

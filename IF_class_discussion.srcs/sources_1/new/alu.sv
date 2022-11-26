@@ -1,29 +1,37 @@
-module alu(input  logic [31:0] a, b,
-           input  logic [2:0]  alucontrol,
-           output logic [31:0] result,
+module alu(input  logic [31:0] RD1E, SrcBE,
+           input  logic [2:0]  AluControlE,
+           output logic [31:0] ALUResultM,
            output logic        ZeroE);
 
   logic [31:0] condinvb, sum;
   logic        v;              // overflow
   logic        isAddSub;       // true when is add or subtract operation
 
-  assign condinvb = alucontrol[0] ? ~b : b;
-  assign sum = a + condinvb + alucontrol[0];
-  assign isAddSub = ~alucontrol[2] & ~alucontrol[1] |
-                    ~alucontrol[1] & alucontrol[0];
+  assign condinvb = AluControlE[0] ? ~SrcBE : SrcBE;
+  assign sum = RD1E + condinvb + AluControlE[0];
+  assign isAddSub = (~AluControlE[2] & ~AluControlE[1]) |
+                    (~AluControlE[1] & AluControlE[0]);
 
   always_comb
-    case (alucontrol)
-     3'b000: result=sum; 
-     3'b001: result=sum; 
-     3'b101: result=sum[31]^v;
-     3'b011: result=a|b;
-     3'b010: result=a&b;
-     default: result=32'bx;
+    case (AluControlE)
+     3'b000: ALUResultM=sum; 
+     3'b001: ALUResultM=sum; 
+     3'b101: ALUResultM=sum[31]^v;
+     3'b011: ALUResultM=RD1E|SrcBE;
+     3'b010: ALUResultM=RD1E&SrcBE;
+     default: ALUResultM=32'bx;
     endcase
     
-  assign ZeroE = 1;
-  assign v = ~(alucontrol[0] ^ a[31] ^ b[31]) & (a[31] ^ sum[31]) & isAddSub;
+  assign ZeroE = (ALUResultM==0) ? 1 : 0;
+  assign v = ~(AluControlE[0] ^ RD1E[31] ^ SrcBE[31]) & (RD1E[31] ^ sum[31]) & isAddSub;
+  
+//    initial begin
+//   $display("Time\t  RD1E\t\t  SrcBE\t\t AluControlE\t ALUResultM\t ZeroE\t sum");
+//   $monitor("%0d\t\t    %0d\t\t    %0d\t\t    %b\t\t\t\t %0d\t\t\t %b\t\t %0d\t\t", 
+//      time,RD1E, SrcBE,AluControlE,ALUResultM,ZeroE,sum);
+//  #260 $finish;
+//   end
+  
   
 endmodule
           

@@ -36,19 +36,19 @@ module id_ex(
 		AluSrcE <=0;
 	end
 	else begin
-		RD1E <= RD1D;
-		RD2E <=RD2D;
+//		RD1E <= RD1D;
+//		RD2E <=RD2D;
 		PCE <=PCD;
 		RDE <= RDD;
-		IMMEXIE <=IMMEXID;
+//		IMMEXIE <=IMMEXID;
 		PCPlus4E <=PCPlus4D;
-		RegWriteE <= RegWriteD;
+/*		RegWriteE <= RegWriteD;
 		ResultSrcE <=ResultSrcD;
 		MemWriteE <=MemWriteD;
 		JumpE <= JumpD;
 		BranchE <=BranchD;
 		AluControlE <=AluControlD;
-		AluSrcE <=AluSrcD;
+		AluSrcE <=AluSrcD;*/
 	end
 	
 //	initial begin

@@ -35,8 +35,8 @@ module Execute(
             RegWriteM, MemWriteM,
             ResultSrcM);
     
-    assign PCSrcE = 0;
-   // assign PCSrcE = (ZeroE & BranchE) | JumpE;
+    //assign PCSrcE = 0;
+    assign PCSrcE = (ZeroE & BranchE) | JumpE;
 
 
 

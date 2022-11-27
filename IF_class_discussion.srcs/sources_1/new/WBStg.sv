@@ -6,7 +6,7 @@ module WBStg(
     
     output logic    [31:0]  ResultW
     );
-    mux3 mux31(ALUResultW, ReadDataW, PCPlus4W, ResultSrcW, ResultW);
+    mux3 #(32) mux31(ALUResultW, ReadDataW, PCPlus4W, ResultSrcW, ResultW);
 
 //        initial begin
 //        $display("Time\t ALUResultW\t ReadDataW\t\t PCPlus4W\t ResultSrcW\t ResultW\t");

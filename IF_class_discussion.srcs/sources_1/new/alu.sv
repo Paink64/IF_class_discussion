@@ -1,6 +1,6 @@
 module alu(input  logic [31:0] RD1E, SrcBE,
            input  logic [2:0]  AluControlE,
-           output logic [31:0] ALUResultM,
+           output logic [31:0] ALUResultE,
            output logic        ZeroE);
 
   logic [31:0] condinvb, sum;
@@ -14,15 +14,15 @@ module alu(input  logic [31:0] RD1E, SrcBE,
 
   always_comb
     case (AluControlE)
-     3'b000: ALUResultM=sum; 
-     3'b001: ALUResultM=sum; 
-     3'b101: ALUResultM=sum[31]^v;
-     3'b011: ALUResultM=RD1E|SrcBE;
-     3'b010: ALUResultM=RD1E&SrcBE;
-     default: ALUResultM=32'bx;
+     3'b000: ALUResultE=sum; 
+     3'b001: ALUResultE=sum; 
+     3'b101: ALUResultE=sum[31]^v;
+     3'b011: ALUResultE=RD1E|SrcBE;
+     3'b010: ALUResultE=RD1E&SrcBE;
+     default: ALUResultE=32'bx;
     endcase
     
-  assign ZeroE = (ALUResultM==0) ? 1 : 0;
+  assign ZeroE = (ALUResultE==0) ? 1 : 0;
   assign v = ~(AluControlE[0] ^ RD1E[31] ^ SrcBE[31]) & (RD1E[31] ^ sum[31]) & isAddSub;
   
 //    initial begin

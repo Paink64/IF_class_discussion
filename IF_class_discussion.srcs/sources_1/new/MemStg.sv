@@ -14,6 +14,7 @@ module MemStg(
     );
     logic[31:0] ReadDataM;
     dmem dmem1(clk, MemWriteM, ALUResultM, WriteDataM, ReadDataM);
+
     Mem_WB  Mem_WB1(clk, reset,
     ALUResultM, ReadDataM, PCPlus4M,
     RDM,

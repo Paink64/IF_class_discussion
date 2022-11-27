@@ -18,14 +18,14 @@ module Execute(
    output logic     [1:0]   ResultSrcM
     );
     logic ZeroE;
-    logic [31:0] SrcBE;
+    logic [31:0] SrcBE, ALUResultE;
 
     mux2 #(32)  pcmux(RD2E, IMMEXIE, AluSrcE, SrcBE);
     adder       PCadder(PCE, IMMEXIE, PCTargetE);
-    alu alu1(RD1E, SrcBE, AluControlE, ALUResultM, ZeroE);
+    alu alu1(RD1E, SrcBE, AluControlE, ALUResultE, ZeroE);
 
             Ex_Mem  Ex_Mem1(clk, reset,
-            ALUResultE, WriteDataE, PCPlus4E,
+            ALUResultE, RD2E, PCPlus4E,
             RDE,
             RegWriteE, MemWriteE,
             ResultSrcE,

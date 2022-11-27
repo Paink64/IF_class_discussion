@@ -4,6 +4,10 @@ module dmem(input  logic        clk, we,
 
   logic [31:0] RAM[63:0];
 
+initial begin
+$readmemh("data-1.txt",RAM);
+end 
+
   assign rd = RAM[a[31:2]]; // word aligned
 
   always_ff @(posedge clk)

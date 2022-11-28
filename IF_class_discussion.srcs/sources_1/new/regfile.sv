@@ -10,9 +10,6 @@ module regfile(input  logic        clk,
   // write third port on rising edge of clock (A3/WD3/WE3)
   // register 0 hardwired to 0
 
-initial begin
-$readmemh("data-1.txt",rf);
-end 
   always_ff @(posedge clk)
 
     if (we3)

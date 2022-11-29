@@ -11,7 +11,8 @@ module regfile(input  logic        clk,
   // register 0 hardwired to 0
 
 initial begin
-$readmemh("data-1.txt",rf);
+for (int i = 0; i <32;i++)
+    rf[i]=0;
 end 
   always_ff @(posedge clk)
 

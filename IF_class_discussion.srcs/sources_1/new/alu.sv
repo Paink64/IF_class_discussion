@@ -9,8 +9,7 @@ module alu(input  logic [31:0] RD1E, SrcBE,
 
   assign condinvb = AluControlE[0] ? ~SrcBE : SrcBE;
   assign sum = RD1E + condinvb + AluControlE[0];
-  assign isAddSub = (~AluControlE[2] & ~AluControlE[1]) |
-                    (~AluControlE[1] & AluControlE[0]);
+  assign isAddSub = (~AluControlE[2] & ~AluControlE[1]) | (~AluControlE[1] & AluControlE[0]);
 
   always_comb
     case (AluControlE)
@@ -30,8 +29,7 @@ module alu(input  logic [31:0] RD1E, SrcBE,
 //   $monitor("%0d\t\t    %0d\t\t    %0d\t\t    %b\t\t\t\t %0d\t\t\t %b\t\t %0d\t\t", 
 //      time,RD1E, SrcBE,AluControlE,ALUResultM,ZeroE,sum);
 //  #260 $finish;
-//   end
-  
+//   endAluControlD_reg
   
 endmodule
           

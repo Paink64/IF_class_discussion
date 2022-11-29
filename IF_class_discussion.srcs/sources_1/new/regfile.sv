@@ -10,10 +10,13 @@ module regfile(input  logic        clk,
   // write third port on rising edge of clock (A3/WD3/WE3)
   // register 0 hardwired to 0
 
+<<<<<<< HEAD
 initial begin
 for (int i = 0; i <32;i++)
     rf[i]=0;
 end 
+=======
+>>>>>>> de6d8914d6d802e266eec92611595c0a75c2ae37
   always_ff @(posedge clk)
 
     if (we3)
